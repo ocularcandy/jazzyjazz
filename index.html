@@ -8,8 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
   </head>
-  
+
   <style>
+    .wrapper {
+      border-radius: 15px;
+      overflow: scroll;
+    }
 
     .left-side-content {
       float: left;
@@ -32,22 +36,24 @@
       font-weight: bold;
       background-color: #10C920;
     }
-        
+
     #today-container {
       color: #FFFFFF;
       background-color: #000000;
     }
-    
+
     .rcorners {
       border-radius: 15px;
       background: #CDCDCD;
     }
-    
+
   </style>
-  
+
   <body>
-    <div class="left-side-content">
-      <div class="row">
+     <!-- <?php echo '<p>Hello World</p>'; ?> -->
+
+    <div class="left-side-content wrapper">
+      <div class="">
       <div class="rcorners" id="today-container">
         <h1 class="section-title-bar">Due Today</h1>
         <ul>
@@ -59,8 +65,8 @@
             <li><a href="#">Lorem Ipsum</a></li>
         </ul>
       </div>
-      
-      <div class="rcorners">  
+
+      <div class="rcorners">
         <h1 class="section-title-bar">My Tickets</h1>
         <ul>
             <li><a href="#">Lorem Ipsum</a></li>
@@ -72,7 +78,7 @@
         </ul>
       </div>
     </div>
-      
+
       <div class="rcorners">
         <h1 class="section-title-bar">My Active Tickets</h1>
         <ul>
@@ -84,7 +90,7 @@
             <li><a href="#">Lorem Ipsum</a></li>
         </ul>
       </div>
-      
+
       <div class="rcorners">
         <h1 class="section-title-bar">My Managed Tickets</h1>
         <ul>
@@ -97,8 +103,8 @@
         </ul>
       </div>
     </div>
-    
-    <div class="right-side-content">
+
+    <div class="right-side-content wrapper">
       <div class="rcorners">
         <h1 class="section-title-bar">Active Ticket Stream</h1>
         <ul>
