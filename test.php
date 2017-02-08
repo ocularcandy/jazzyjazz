@@ -50,7 +50,7 @@
       float: right;
       width: 360px;
       height: 660px;
-      overflow: scroll;
+      overflow-y: scroll;
     }
 
     .section-title-bar {
@@ -75,7 +75,6 @@
     #right-container{
       border-radius: 15px;
       background-color:#E0E0E0;
-      height:inherit;
     }
 
     progress[value] {
@@ -246,7 +245,6 @@
     <div class="right-side-content">
       <div id="right-container">
         <h4 class="section-title-bar">Active Ticket Stream</h4>
-        <div style="overflow-y:scroll;">
         <table class="table table-hover table-borderless">
           <tbody>
           <?php $streamArray = array
@@ -259,6 +257,9 @@
               array("Robert Wright", "Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields", "07/20/12 6:23 am"),
               array("Kenny Ginn", "Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 9:45 am"),
               array("Steve Graham","[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"),
+              array("Zane Fields", "Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 7:23 am"),
+              array("Kenny Ginn", "Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 9:45 am"),
+              array("Steve Graham","[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"),
               array("Zane Fields", "Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 7:23 am")
             );
             foreach($streamArray as $key=>$value): ?>
@@ -269,7 +270,6 @@
             <?php endforeach; ?>
         </tbody>
         </table>
-      </div>
     </div><!-- end container -->
     </div><!-- end right-side-content -->
 
