@@ -17,6 +17,33 @@
       height: 660px;
     }
 
+    .btn {
+      border-radius: 5px;
+      color: #ffffff;
+      font-size: 10px;
+      padding: 2px;
+      background: #10C920;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #3cb0fd;
+      text-decoration: none;
+    }
+
+    table,th {
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: left;
+    }
+
+    tr:hover {
+      background-color: #ffffff;
+    }
+    tr:first-child:hover {
+        background-color: #cdcdcd;
+    }
+
     #wrap {
       width: 1280px;
       margin: 0 auto;
@@ -44,7 +71,6 @@
 
     .two-cols {
       column-count: 2;
-      height: 200px;
     }
 
     #today-container {
@@ -55,12 +81,27 @@
 
     #container{
       border-radius: 15px;
-      background-color:#CDCDCD;
+      background-color:#cdcdcd;
     }
 
     #right-container{
       border-radius: 15px;
-      background-color:#CDCDCD;
+      background-color:#cdcdcd;
+    }
+
+    progress[value] {
+      /* Reset the default appearance */
+      -webkit-appearance: none;
+       appearance: none;
+
+      width: 250px;
+      height: 20px;
+    }
+
+    progress[value]::-webkit-progress-bar {
+      background: #red;
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
     }
 
   </style>
@@ -71,7 +112,36 @@
          <div id="today-container">
            <h3 class="section-title-bar">Due Today</h3>
            <table>
+             <thead>
+               <th>Ticket Title</th>
+               <th>Time Left</th>
+             </thead>
+             <tbody>
               <?php $ticketArray = [
+                      "Dealer TLC Redesign" => "3 hours",
+                      "Golf Pigeon Error Fix (Profiles)" => "5 hours",
+                      "WebIQ - New Module Design" => "6 hours",
+                      "Dalton Boggs Update (backend)" => "8 hours",
+                      "OCA Website Skin (Revised)" => "10 hours",
+                      "Golf Pigeon Broken Image Error" => "12 hours"
+                    ];
+              foreach($ticketArray as $key=>$value): ?>
+              <tr>
+                <td><?php echo $key; ?></td>
+                <td><?php echo $value; ?></td>
+                <td><a class="btn">details</a></td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+           </table>
+         </div>
+
+         <div id="container">
+           <h3 class="section-title-bar">My Tickets</h3>
+           <table>
+             <th>Ticket Title</th>
+             <th>Time Left</th>
+             <?php $ticketArray = [
                       "Dealer TLC Redesign" => "3 hours",
                       "Golf Pigeon Error Fix (Profiles)" => "5 hours",
                       "WebIQ - New Module Design" => "6 hours",
@@ -83,26 +153,7 @@
               <tr>
                   <td><?php echo $key; ?></td>
                   <td><?php echo $value; ?></td>
-                  <td><button name="details">details</button></td>
-              </tr>
-              <?php endforeach; ?>
-           </table>
-         </div>
-
-         <div id="container">
-           <h3 class="section-title-bar">My Tickets</h3>
-           <table>
-              <?php $ticketArray = [
-                      "Dealer TLC Redesign" => "3 hours",
-                      "Golf Pigeon Error Fix (Profiles)" => "5 hours",
-                      "WebIQ - New Module Design" => "6 hours",
-                      "Dalton Boggs Update (backend)" => "8 hours",
-                      "OCA Website Skin (Revised)" => "10 hours",
-                      "Golf Pigeon Broken Image Error" => "12 hours"
-                    ];
-              foreach($ticketArray as $key=>$value): ?>
-              <tr>
-                  <td><?php echo $key; echo $value; ?></td>
+                  <td><a class="btn">details</a></td>
               </tr>
               <?php endforeach; ?>
            </table>
@@ -112,17 +163,29 @@
          <div id="container">
            <h3 class="section-title-bar">My Active Tickets</h3>
            <table>
+             <th>Ticket Title</th>
+             <th>Project Phase</th>
+             <th>Due Date</th>
+             <th>Time Left</th>
+             <th>Current Holder</th>
+             <th>Total Time</th>
               <?php $ticketArray = [
-                      "Dealer TLC Redesign" => "3 hours",
-                      "Golf Pigeon Error Fix (Profiles)" => "5 hours",
-                      "WebIQ - New Module Design" => "6 hours",
-                      "Dalton Boggs Update (backend)" => "8 hours",
-                      "OCA Website Skin (Revised)" => "10 hours",
-                      "Golf Pigeon Broken Image Error" => "12 hours"
+                      "Dealer TLC Redesign" => [100, "8/3/12 3:00pm", "19 hours", "Matt Brown", "45 hours"],
+                      "Golf Pigeon Error Fix (Profiles)" => [30, "8/3/12 4:00pm","30 days", "Robert White", "23 hours"],
+                      "WebIQ - New Module Design" => [60, "8/3/12 5:00pm","15 days","Kyle Fields","60 hours"],
+                      "Dalton Boggs Update (backend)" => [30, "8/4/12 9:00am", "40 days","Zane Fields","5 hours"],
+                      "OCA Website Skin (Revised)" => [40, "8/5/12 0:15am", "3 days","Zane Fields","145 hours"],
+                      "Golf Pigeon Broken Image Error" => [90, "8/6/12 9:00am","1 day","Steve Graham","45 hours"]
                     ];
               foreach($ticketArray as $key=>$value): ?>
               <tr>
-                  <td><?php echo $value; ?></td>
+                  <td><?php echo $key; ?></td>
+                  <td><progress value=$value[0] max="100"></progress></td>
+                  <td><?php echo $value[1]; ?></td>
+                  <td><?php echo $value[2]; ?></td>
+                  <td><?php echo $value[3]; ?></td>
+                  <td><?php echo $value[4]; ?></td>
+                  <td><a class="btn">details</a></td>
               </tr>
               <?php endforeach; ?>
            </table>
@@ -131,17 +194,29 @@
          <div id="container">
            <h3 class="section-title-bar">My Managed Tickets</h3>
            <table>
-              <?php $ticketArray = [
-                      "Dealer TLC Redesign" => "3 hours",
-                      "Golf Pigeon Error Fix (Profiles)" => "5 hours",
-                      "WebIQ - New Module Design" => "6 hours",
-                      "Dalton Boggs Update (backend)" => "8 hours",
-                      "OCA Website Skin (Revised)" => "10 hours",
-                      "Golf Pigeon Broken Image Error" => "12 hours"
-                    ];
+             <th>Ticket Title</th>
+             <th>Project Phase</th>
+             <th>Due Date</th>
+             <th>Time Left</th>
+             <th>Current Holder</th>
+             <th>Total Time</th>
+             <?php $ticketArray = [
+                     "Dealer TLC Redesign" => [100, "8/3/12 3:00pm", "19 hours", "Matt Brown", "45 hours"],
+                     "Golf Pigeon Error Fix (Profiles)" => [30, "8/3/12 4:00pm","30 days", "Robert White", "23 hours"],
+                     "WebIQ - New Module Design" => [60, "8/3/12 5:00pm","15 days","Kyle Fields","60 hours"],
+                     "Dalton Boggs Update (backend)" => [30, "8/4/12 9:00am", "40 days","Zane Fields","5 hours"],
+                     "OCA Website Skin (Revised)" => [40, "8/5/12 0:15am", "3 days","Zane Fields","145 hours"],
+                     "Golf Pigeon Broken Image Error" => [90, "8/6/12 9:00am","1 day","Steve Graham","45 hours"]
+                   ];
               foreach($ticketArray as $key=>$value): ?>
               <tr>
-                  <td><?php echo $value; ?></td>
+                  <td><?php echo $key; ?></td>
+                  <td><progress value="$value[0]" max="100"></progress></td>
+                  <td><?php echo $value[1]; ?></td>
+                  <td><?php echo $value[2]; ?></td>
+                  <td><?php echo $value[3]; ?></td>
+                  <td><?php echo $value[4]; ?></td>
+                  <td><a class="btn">details</a></td>
               </tr>
               <?php endforeach; ?>
            </table>
@@ -153,17 +228,21 @@
        <div id="right-container">
          <h3 class="section-title-bar">Active Ticket Stream</h3>
          <table>
-            <?php $ticketArray = [
-                    "Dealer TLC Redesign" => "3 hours",
-                    "Golf Pigeon Error Fix (Profiles)" => "5 hours",
-                    "WebIQ - New Module Design" => "6 hours",
-                    "Dalton Boggs Update (backend)" => "8 hours",
-                    "OCA Website Skin (Revised)" => "10 hours",
-                    "Golf Pigeon Broken Image Error" => "12 hours"
+            <?php $userArray = [
+                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields"],
+                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields"],
+                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright"],
+                    "Zane Fields" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Robert Wright"],
+                    "Sharon Wright" => ["Handle Billing Error", "Cash in Dat Site", "Steve Graham"],
+                    "Robert Wright" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields"],
+                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields"],
+                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields"],
+                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright"],
                   ];
-            foreach($ticketArray as $key=>$value): ?>
+            foreach($userArray as $key=>$value): ?>
             <tr>
-                <td><?php echo $value; ?></td>
+                <td><img src="http://0.gravatar.com/avatar/2dd503e9980a48a02241e05ef1c58b4d?s=50"/></td>
+                <td><?php echo $key .' completed ' . $value[0] . ' in ticket ' . $value[1] . ' & has passed it on to ' . $value[2]; ?></td>
             </tr>
             <?php endforeach; ?>
          </table>
