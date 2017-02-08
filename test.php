@@ -41,7 +41,7 @@
       background-color: #ffffff;
     }
     tr:first-child:hover {
-        background-color: #cdcdcd;
+        background-color: #E0E0E0;
     }
 
     #wrap {
@@ -81,12 +81,12 @@
 
     #container{
       border-radius: 15px;
-      background-color:#cdcdcd;
+      background-color:#E0E0E0;
     }
 
     #right-container{
       border-radius: 15px;
-      background-color:#cdcdcd;
+      background-color:#E0E0E0;
     }
 
     progress[value] {
@@ -180,7 +180,7 @@
               foreach($ticketArray as $key=>$value): ?>
               <tr>
                   <td><?php echo $key; ?></td>
-                  <td><progress value=$value[0] max="100"></progress></td>
+                  <td><progress value="<?php echo $value[0];?>" max="100"></progress></td>
                   <td><?php echo $value[1]; ?></td>
                   <td><?php echo $value[2]; ?></td>
                   <td><?php echo $value[3]; ?></td>
@@ -211,7 +211,7 @@
               foreach($ticketArray as $key=>$value): ?>
               <tr>
                   <td><?php echo $key; ?></td>
-                  <td><progress value="$value[0]" max="100"></progress></td>
+                  <td><progress value="<?php echo $value[0];?>" max="100"></progress></td>
                   <td><?php echo $value[1]; ?></td>
                   <td><?php echo $value[2]; ?></td>
                   <td><?php echo $value[3]; ?></td>
@@ -229,20 +229,20 @@
          <h3 class="section-title-bar">Active Ticket Stream</h3>
          <table>
             <?php $userArray = [
-                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields"],
-                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields"],
-                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright"],
-                    "Zane Fields" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Robert Wright"],
-                    "Sharon Wright" => ["Handle Billing Error", "Cash in Dat Site", "Steve Graham"],
-                    "Robert Wright" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields"],
-                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields"],
-                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields"],
-                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright"],
+                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 - 9:45 am"],
+                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"],
+                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 8:43 am"],
+                    "Zane Fields" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Robert Wright", "07/20/12 - 7:23 am"],
+                    "Sharon Wright" => ["Handle Billing Error", "Cash in Dat Site", "Steve Graham","07/20/12 - 7:23 am"],
+                    "Robert Wright" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields", "07/20/12 6:23 am"],
+                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 9:45 am"],
+                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"],
+                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 7:23 am"],
                   ];
             foreach($userArray as $key=>$value): ?>
             <tr>
-                <td><img src="http://0.gravatar.com/avatar/2dd503e9980a48a02241e05ef1c58b4d?s=50"/></td>
-                <td><?php echo $key .' completed ' . $value[0] . ' in ticket ' . $value[1] . ' & has passed it on to ' . $value[2]; ?></td>
+                <td><img src="http://0.gravatar.com/avatar/2dd503e9980a48a02241e05ef1c58b4d?s=45"/></td>
+                <td><b style="color:#10C920"><?php echo $key ?></b> completed <b><?php echo $value[0]; ?></b> in ticket <b style="color:#10C920"><?php echo $value[1]; ?></b> & has passed it on to <b><?php echo $value[2]; ?></b>.<div style="font-size:.8em"><?php echo $value[3]; ?></div></td>
             </tr>
             <?php endforeach; ?>
          </table>
