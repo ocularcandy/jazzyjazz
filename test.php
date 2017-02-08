@@ -23,7 +23,7 @@
       border-radius: 3px;
       color: #ffffff;
       font-size: 10px;
-      padding: 2px;
+      padding: 1px;
       background: #10C920;
       text-decoration: none;
     }
@@ -102,7 +102,6 @@
       padding: 2px;
       border: none;
     }
-
   </style>
 
   <body id="wrap">
@@ -249,24 +248,25 @@
         <h4 class="section-title-bar">Active Ticket Stream</h4>
         <div style="overflow-y:scroll;">
         <table class="table table-hover table-borderless">
-          <?php $userArray = [
-                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 - 9:45 am"],
-                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"],
-                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 8:43 am"],
-                    "Zane Fields" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Robert Wright", "07/20/12 - 7:23 am"],
-                    "Sharon Wright" => ["Handle Billing Error", "Cash in Dat Site", "Steve Graham","07/20/12 - 7:23 am"],
-                    "Robert Wright" => ["Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields", "07/20/12 6:23 am"],
-                    "Kenny Ginn" => ["Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 9:45 am"],
-                    "Steve Graham" => ["[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"],
-                    "Zane Fields" => ["Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 7:23 am"]
-                  ];
-          foreach($userArray as $key=>$value): ?>
           <tbody>
-            <tr>
-                <td><img src="http://0.gravatar.com/avatar/2dd503e9980a48a02241e05ef1c58b4d?s=50"/></td>
-                <td><b style="color:#10C920"><?php echo $key ?></b> completed <b><?php echo $value[0]; ?></b> in ticket <b style="color:#10C920"><?php echo $value[1]; ?></b> & has passed it on to <b><?php echo $value[2]; ?></b>.<div style="font-size:.8em"><?php echo $value[3]; ?></div></td>
-            </tr>
-          <?php endforeach; ?>
+          <?php $streamArray = array
+            (
+              array("Kenny Ginn", "Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 - 9:45 am"),
+              array("Steve Graham", "[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"),
+              array("Zane Fields", "Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 8:43 am"),
+              array("Zane Fields","Investigate & Fix Error", "Golf Pigeon Error Fix", "Robert Wright", "07/20/12 - 7:23 am"),
+              array("Sharon Wright", "Handle Billing Error", "Cash in Dat Site", "Steve Graham","07/20/12 - 7:23 am"),
+              array("Robert Wright", "Investigate & Fix Error", "Golf Pigeon Error Fix", "Zane Fields", "07/20/12 6:23 am"),
+              array("Kenny Ginn", "Calling Client & Gather Info", "OCA Website Skin (Revised)", "Zane Fields", "07/20/12 9:45 am"),
+              array("Steve Graham","[Step Name]", "[Ticket Title]", "Zane Fields", "07/20/12 - 8:45 am"),
+              array("Zane Fields", "Convert PSD to HTML", "WebIQ - New Module Design", "Robert Wright", "07/20/12 - 7:23 am")
+            );
+            foreach($streamArray as $key=>$value): ?>
+                <tr>
+                    <td><img src="http://0.gravatar.com/avatar/2dd503e9980a48a02241e05ef1c58b4d?s=50"/></td>
+                    <td><b style="color:#10C920"><?php echo $value[0] ?></b> completed <b><?php echo $value[1]; ?></b> in ticket <b style="color:#10C920"><?php echo $value[2]; ?></b> & has passed it on to <b><?php echo $value[3]; ?></b>.<div style="font-size:.8em"><?php echo $value[4]; ?></div></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
         </table>
       </div>
