@@ -1,64 +1,74 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <title>Amber Hayes Test</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Amber Hayes Test</title>
 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
+
+    <style>
+      body {
+        font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        height: 660px;
+      }
+
+      #wrap {
+        width: 1280px;
+        margin: 0 auto;
+      }
+
+      .left-side-content {
+        padding: 5px;
+        float: left;
+        width: calc(100% - 380px);
+      }
+
+      .right-side-content {
+        padding: 5px;
+        border-radius: 15px;
+        overflow: scroll;
+        float: right;
+        width: 360px;
+        height: 660px;
+      }
+
+      .section-title-bar {
+        border-radius: 15px 15px 0px 0px;
+        padding: 10px;
+        text-align: left;
+        font-weight: bold;
+        background-color: #10C920;
+      }
+
+      .two-cols {
+        column-count: 2;
+      }
+
+      #today-container {
+        color: #FFFFFF;
+        background-color: #000000;
+      }
+
+      .rcorners {
+        border-radius: 15px;
+        background: #CDCDCD;
+      }
+
+    </style>
   </head>
-
-  <style>
-    body {
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-      height: 660px;
-    }
-
-    #wrap {
-    	width: 1280px;
-    	margin: 0 auto;
-    }
-
-    .left-side-content {
-      padding: 5px;
-      float: left;
-      width: calc(100% - 380px);
-    }
-
-    .right-side-content {
-      padding: 5px;
-      border-radius: 15px;
-      overflow: scroll;
-      float: right;
-      width: 360px;
-      height: 660px;
-    }
-
-    .section-title-bar {
-      border-radius: 15px 15px 0px 0px;
-      padding: 10px;
-      text-align: left;
-      font-weight: bold;
-      background-color: #10C920;
-    }
-
-    .two-cols {
-      column-count: 2;
-    }
-
-    #today-container {
-      color: #FFFFFF;
-      background-color: #000000;
-    }
-
-    .rcorners {
-      border-radius: 15px;
-      background: #CDCDCD;
-    }
-
-  </style>
 
   <body id="wrap">
      <!-- <?php echo '<p>Hello World</p>'; ?> -->
@@ -165,7 +175,10 @@
           </ul>
       </div>
     </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
-
-
 </html>
